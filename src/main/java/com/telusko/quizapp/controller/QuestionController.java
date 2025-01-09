@@ -3,22 +3,19 @@ package com.telusko.quizapp.controller;
 
 import com.telusko.quizapp.model.Question;
 import com.telusko.quizapp.service.QuestionService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/question")
 public class QuestionController {
 
 
     private final QuestionService questionService;
-
-    public QuestionController(QuestionService questionService) {
-        this.questionService = questionService;
-    }
 
     @GetMapping("/allQuestions")
     public ResponseEntity<List<Question>> getAllQuestions() {
