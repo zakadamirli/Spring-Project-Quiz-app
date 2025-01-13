@@ -31,6 +31,4 @@ public class QuizController {
     public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<Response> responses) {
         return quizService.calculateResult(id, responses);
     }
-
-
 }
